@@ -20,28 +20,20 @@ export default function ListUser() {
                 </thead>
                 <tbody>
 
-                    <tr>
-                        <th>Lê Nguyễn quốc huy  </th>
-                        <td>huylnq2.21it@vku.udn.vn </td>
-                        <td>22</td>
-                    </tr>
-
-                    {/* {users.length === 0 ? (
+                    {users.length === 0 ? (
                         <tr><td colSpan={4} className="text-center">No users found</td></tr>
-                    ) : */}
-                    {
-                        (
-                            users.map((user) => (
-                                <tr key={user.id}>
-                                    <td>{user.name}</td>
-                                    <td>{user.email}</td>
-                                    <td>{user.age ?? 'N/A'}</td>
-                                    <td>
-                                        <Link to={`/users/${user.id}`} className="btn btn-sm btn-info">View</Link>
-                                    </td>
-                                </tr>
-                            ))
-                        )}
+                    ) : (
+                        users.map((user) => (
+                            <tr key={user.id}>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>{user.age ?? 'N/A'}</td>
+                                <td>
+                                    <Link to={`/users/${user.id}`} className="btn btn-sm btn-info">View</Link>
+                                </td>
+                            </tr>
+                        ))
+                    )}
                 </tbody>
             </table>
         </div>
